@@ -1,0 +1,4 @@
+interface:
+  display_name: "Low-Friction Product Design"
+  short_description: "Design task-centered flows with safe defaults and automation"
+  default_prompt: "Use $design-low-friction-products to simplify this workflow, reuse trusted context, and preserve user control."

@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "skill": "design-low-friction-products",
+  "cases": [
+    {
+      "id": "explicit-en-order-entry",
+      "language": "en",
+      "invocation": "explicit",
+      "prompt": "Use $design-low-friction-products to simplify this order-entry form, reuse trusted customer context, and protect manual price edits.",
+      "should_trigger": true,
+      "expected_behaviors": [
+        "Define the expected entry and completion outcome.",
+        "Separate prefill from recommendation and submission.",
+        "Protect manual edits and show the source of automatic values."
+      ]
+    },
+    {
+      "id": "explicit-zh-dropdown",
+      "language": "zh",
+      "invocation": "explicit",
+      "prompt": "请使用 $design-low-friction-products 优化这个下拉框，根据最近确认使用排序，并自动带出上次数据，但不要覆盖人工修改。",
+      "should_trigger": true,
+      "expected_behaviors": [
+        "Filter eligible options before applying history.",
+        "Keep ordering stable while open.",
+        "Treat confirmed use as a scoped signal and preserve manual values."
+      ]
+    },
+    {
+      "id": "implicit-en-recent-options",
+      "language": "en",
+      "invocation": "implicit",
+      "prompt": "Rank the customer selector by current account relevance, pinned choices, and recent confirmed use, while keeping all authorized customers searchable.",
+      "should_trigger": true,
+      "expected_behaviors": [
+        "Separate eligibility from display ordering.",
+        "Keep explicit intent above adaptive signals.",
+        "Provide stable fallback and complete-option access."
+      ]
+    },
+    {
+      "id": "implicit-zh-prefill",
+      "language": "zh",
+      "invocation": "implicit",
+      "prompt": "订单选择客户和商品后，自动带入同公司同客户最近确认的价格，显示来源，用户改过后不要再被异步请求覆盖。",
+      "should_trigger": true,
+      "expected_behaviors": [
+        "Use a field-specific same-scope prefill contract.",
+        "Make the source inspectable.",
+        "Stop automatic replacement after manual edits."
+      ]
+    },
+    {
+      "id": "implicit-en-workbench-entry",
+      "language": "en",
+      "invocation": "implicit",
+      "prompt": "Users cannot find the approval action from their workbench. Redesign the path so the expected entry is visible without duplicating business validation.",
+      "should_trigger": true,
+      "expected_behaviors": [
+        "Treat expected-entry-to-completion as the acceptance unit.",
+        "Allow contextual UI entry points to call one authoritative command.",
+        "Verify discoverability from a first-time user's perspective."
+      ]
+    },
+    {
+      "id": "implicit-zh-feature-pile",
+      "language": "zh",
+      "invocation": "implicit",
+      "prompt": "这个工作台按钮越来越多，请按高频主任务、低频维护和管理员能力重新分层，避免继续堆叠功能。",
+      "should_trigger": true,
+      "expected_behaviors": [
+        "Name the observable friction and task frequency.",
+        "Use progressive disclosure without hiding required actions.",
+        "Merge, replace, or defer parallel capability."
+      ]
+    },
+    {
+      "id": "implicit-en-ai-publication",
+      "language": "en",
+      "invocation": "implicit",
+      "prompt": "Design an AI-assisted publishing flow that drafts automatically but previews impact and requires confirmation before public release.",
+      "should_trigger": true,
+      "expected_behaviors": [
+        "Choose automation level by consequence.",
+        "Keep generated output separate from human acceptance.",
+        "Provide recovery and audit information."
+      ]
+    },
+    {
+      "id": "implicit-en-backend-refactor",
+      "language": "en",
+      "invocation": "implicit",
+      "prompt": "Refactor the internal cache adapter without changing any API, UI behavior, defaults, ordering, or acceptance criteria.",
+      "should_trigger": false,
+      "expected_behaviors": [
+        "Do not load the full skill for a behavior-preserving internal refactor."
+      ]
+    },
+    {
+      "id": "implicit-zh-database-index",
+      "language": "zh",
+      "invocation": "implicit",
+      "prompt": "只给现有查询增加数据库索引，不改变接口、页面行为、排序、默认值或用户验收标准。",
+      "should_trigger": false,
+      "expected_behaviors": [
+        "Do not load the full skill for a backend-only performance change."
+      ]
+    },
+    {
+      "id": "implicit-en-unchanged-docs",
+      "language": "en",
+      "invocation": "implicit",
+      "prompt": "Update the developer documentation to describe the existing request timeout exactly as implemented; do not change behavior.",
+      "should_trigger": false,
+      "expected_behaviors": [
+        "Do not load the full skill for documentation of unchanged behavior."
+      ]
+    },
+    {
+      "id": "implicit-zh-visual-polish",
+      "language": "zh",
+      "invocation": "implicit",
+      "prompt": "只调整标题颜色和卡片圆角，不改变布局、交互、可访问性或验收标准。",
+      "should_trigger": false,
+      "expected_behaviors": [
+        "Do not load the full skill for isolated visual polish with no behavior change."
+      ]
+    },
+    {
+      "id": "implicit-en-release-notes",
+      "language": "en",
+      "invocation": "implicit",
+      "prompt": "Translate these release notes into English without changing their meaning or any product behavior.",
+      "should_trigger": false,
+      "expected_behaviors": [
+        "Do not load the full skill for a translation-only request."
+      ]
+    }
+  ]
+}
