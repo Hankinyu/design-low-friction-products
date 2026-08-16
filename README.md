@@ -1,6 +1,10 @@
 # Design Low-Friction Products
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 An agent skill for designing and auditing product interfaces, forms, workflows, dashboards, and AI-assisted operations around a simple acceptance unit: can the user move from the expected entry point to a reliable outcome with low learning cost?
+
+> 中文简介：这是一个面向产品设计与审查的 Agent Skill，帮助团队降低用户学习成本、减少重复录入、提供安全的智能默认，并控制功能堆叠。[阅读完整中文说明](README.zh-CN.md)。
 
 Status: public standalone skill. The first release is validated as a minimal, English-language runtime package with Chinese human documentation.
 
